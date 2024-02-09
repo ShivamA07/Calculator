@@ -1,0 +1,27 @@
+notebookId = "04e6091e-3154-4189-8691-b62f88bfda42"
+
+[cells.b0fc76d2-dba6-4574-8bb3-ed6479b4534b]
+cellType = "code"
+code = """
+import zero_true as zt
+user_operator = zt.SelectBox(id = "userOperator", label = "Choose an operator", items = ["Addition", "subtraction", "multiply", "Divide"])
+user_input = zt.NumberInput(id = "number1", label = "Numbers")
+user_input2 = zt.NumberInput(id = "number2", label = "Numbers")
+
+def addition(x,y):
+  return x + y
+def subtraction(x,y):
+  return x - y
+def multiply(x,y):
+  return x * y
+def divide(x,y):
+  return x / y 
+dict_values = {"Addition":addition,
+               "subtraction":subtraction,
+               "multiply" : multiply,
+               "Divide" : divide
+              }
+print(dict_values[user_operator.value](int(user_input.value), int(user_input2.value)))
+
+"""
+
